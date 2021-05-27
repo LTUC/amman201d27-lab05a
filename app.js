@@ -8,7 +8,7 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 let a;
 let b;
-function sum(a, b) {
+function sum(a, b,) {
 let array = [a+b,'The sum of 4 and 7 is 11.']
 return array;
 }
@@ -104,11 +104,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
-  //eslint-disable-line
+  let array =[sumAndMultiply(testArray[0],testArray[1],testArray[2])[1],'The numbers 2,3,4 have a product of 24.']
+  return array;
+  
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
+console.log(testMultiplyArray(testArray));
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
