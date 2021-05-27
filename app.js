@@ -53,21 +53,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  // let sum1 =sum(a,b)[0];
-  // let sum2 =sum(sum1,c)[0];
-  let sum3 =sum(sum((a,b)[0]),c)[0];
-  // let multi=multiply(a,b)[0];
-  // let multi1=multiply(multi,c)[0]
-  let multi1=multiply(multiply(a,b)[0],c)[0];
+  let sum1 =sum(a,b)[0];
+  let sum2 =sum(sum1,c)[0];
+  // let sum3 =sum(sum(a,b)[0],c)[0];
+  let multi=multiply(a,b)[0];
+  let multi1=multiply(multi,c)[0]
+  // let multi1=multiply(multiply(a,b)[0],c)[0];
   // let stringSum =`${a} and ${b} and ${c} to ${sum3}.`
-  let stringSum=a + ' and ' + b + ' and ' + c + ' sum to ' + sum3 + '.';
+  let stringSum=a + ' and ' + b + ' and ' + c + ' sum to ' + sum2 + '.';
   let stringMulti='The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multi1 + '.';
   // let stringMulti =`The product of ${a} and ${b} and ${c} is ${multi1}.`
-  return[ sum3,multi1,stringSum,stringMulti]
+  return[ sum2,multi1,stringSum,stringMulti]
 }
-
+console.log(sumAndMultiply(2,2,2))
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -77,30 +77,37 @@ Write a function called sumArray() that takes in an array of numbers as its sing
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
+ 
+
+
 IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To do addition, use your sum() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
-let sum1 =0
-let stringArr=''
+// let sum1 =0
+// let stringArr=''
 function sumArray(sumArr) {
-  for (let i=0;i<testArray.length;i++){
-     sum1 =sum(testArray[i],sum1)[0]
-     if (i<2){
-       stringArr=stringArr+testArray[i]+','
-     }else{
-      stringArr=stringArr+testArray[i]
-     }
-  }
-   let st=`${stringArr} was passed in as an array of numbers, and ${sum1} is thier sum.`
-   return[sum1,st]
+  // for (let i=0;i<testArray.length;i++){
+  //    sum1 =sum(testArray[i],sum1)[0]
+  //    if (i<2){
+  //      stringArr=stringArr+testArray[i]+','
+  //    }else{
+  //     stringArr=stringArr+testArray[i]
+  //    }
+  // }
+  let sum1= sum(sum(testArray[0],testArray[1])[0],testArray[2])[0];
+  console.log(sum1)
+  let stringArr=testArray[0]+','+testArray[1]+','+testArray[2];
+  let st=stringArr + ' was passed in as an array of numbers, and '+sum1 +' is their sum.';
+   console.log(st)
+   return[sum1,st];
 }
-
+// console.log(sumArray(testArray))
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -109,6 +116,7 @@ testSumArray(testArray);
 Write a function called multiplyArray() that takes an array of numbers as its argument and returns an array whose first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 
 "The numbers 2,3,4 have a product of 24."
+ 
 
 
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
@@ -120,16 +128,12 @@ let arryMulti=[2,3,4]
 let multi=1
 let stringArray=''
 function multiplyArray(multArr) {
-  for (let i=0;i<arryMulti.length;i++){
-    multi =multiply(arryMulti[i],multi)[0]
-    if (i<2){
-      stringArray=stringArray+arryMulti[i]+','
-    }else{
-      stringArray=stringArray+testArray[i]
-    }
- }
-  let st=`The numbers ${stringArray} have a product of ${multi}.`
-  return[multi,st]
+  let multi=multiply(multiply(arryMulti[0],arryMulti[1])[0],arryMulti[2])[0];
+  console.log(multi)
+  let str='The numbers '+arryMulti[0]+','+arryMulti[1]+','+arryMulti[2]+ ' have a product of '+multi+'.'
+  // let st=`The numbers ${stringArray} have a product of ${multi}.`;
+  console.log(str)
+  return[multi,str]
 }
 console.log(multiplyArray())
 
@@ -157,23 +161,24 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 let multip=1;
-let stringArra='';
+let stringArr='';
 function multiplyAnyArray(dynamicArray) {
-
   for (let i =0 ; i<testDynamicArray.length; i++){
     console.log('i:',i)
-    multip =multiply(testDynamicArray[i],multip)[0]
+          multip =multiply(testDynamicArray[i],multip)[0];
     console.log(multip)
-    if (i<testDynamicArray.length-1){
-      stringArra=stringArra+testDynamicArray[i]+','
-    }else{
-      stringArra=stringArra+testDynamicArray[i]
-    }
+          if (i<testDynamicArray.length-1){
+            stringArr = stringArr+testDynamicArray[i]+',';
+          }else{
+            stringArr = stringArr+testDynamicArray[i];
+          }
+   console.log(stringArr)
   }
-  let stringAr=`The numbers ${stringArra} have a prodect of ${multip}.`
-  return[multip,stringAr];
+  let stringVar="The numbers "+stringArr+" have a product of "+multip+'.';
+  console.log(stringVar)
+  return[multip,stringVar];
 }
-// console.log(multiplyAnyArray(testDynamicArray))
+multiplyAnyArray()
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyAnyArray(testDynamicArray);
 
