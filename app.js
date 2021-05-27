@@ -8,10 +8,12 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 function sum(a, b) {
-// Write your code here
+  let c = a + b ;
+  let stringVar = `The sum of ${a} and ${b} is ${c}.`
+  return [ c , stringVar ]
 }
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -25,11 +27,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
-  //eslint-disable-line
+  let c = a * b;
+  let stringVar = `The product of ${a} and ${b} is ${c}.`
+  return [c , stringVar]
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -46,11 +50,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  //eslint-disable-line
+  let d = sum(sum(a,b)[0],c)[0] ;
+  let e = multiply(multiply(a,b)[0],c)[0] ;
+  let sumString = `${a} and ${b} and ${c} sum to ${d}.`
+  let sumMult = `The product of ${a} and ${b} and ${c} is ${e}.`
+  return [d,e,sumString,sumMult];
+
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -68,12 +77,14 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-  //eslint-disable-line
-}
+    let arrSum = sum(sum(sumArr[0],sumArr[1])[0],sumArr[2])[0];
+    let arrString = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${arrSum} is their sum.`
+    return [arrSum,arrString]
+  }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -89,11 +100,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
-  //eslint-disable-line
+  let arrMult = multiply(multiply(multArr[0],multArr[1])[0],multArr[2])[0];
+  let arrStringMult = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${arrMult}.`
+  return [arrMult,arrStringMult];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
@@ -115,11 +128,48 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-
+ 
 function multiplyAnyArray(dynamicArray) {
-  //eslint-disable-line
+
+/*
+  
+  let arrMultDyn = dynamicArray ;
+  let arrDynVar = null;
+  let stringArrDyn ='';
+
+  if (dynamicArray.length % 2 == 0){
+    for (let i = 1 ; i < dynamicArray.length ; i++){
+    
+    arrDynVar = multiply(arrMultDyn[0],arrMultDyn[1])[0];
+    arrMultDyn.shift();
+    arrMultDyn.shift();
+    arrMultDyn.unshift(arrDynVar)
+
+   } 
+
+  }else{
+    for (let i = 0 ; i < arrMultDyn.length ; i++){
+      
+      arrDynVar = multiply(arrMultDyn[0],arrMultDyn[1])[0];
+
+      arrMultDyn.slice(0,2);
+      console.log(arrMultDyn.length);
+      arrMultDyn.unshift(arrDynVar)
+      console.log(arrMultDyn,i);
+  }
+  
+    stringArrDyn = `The numbers ${dynamicArray.toString()} have a product of ${arrMultDyn[0]}.`
 }
 
+  
+return [arrMultDyn[0],stringArrDyn] 
+
+
+
+
+
+*/
+}
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
