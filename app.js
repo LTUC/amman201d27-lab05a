@@ -53,13 +53,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  let sum1 =sum(a,b)[0];
-  let sum2 =sum(sum1,c)[0];
-  let multi=multiply(a,b)[0];
-  let multi1=multiply(multi,c)[0]
-  let stringSum =`${a} and ${b} and ${c} to ${sum2}.`
-  let stringMulti =`The product of ${a} and ${b} and ${c} is ${multi1}.`
-  return[stringSum,stringMulti]
+  // let sum1 =sum(a,b)[0];
+  // let sum2 =sum(sum1,c)[0];
+  let sum3 =sum(sum((a,b)[0]),c)[0];
+  // let multi=multiply(a,b)[0];
+  // let multi1=multiply(multi,c)[0]
+  let multi1=multiply(multiply(a,b)[0],c)[0];
+  // let stringSum =`${a} and ${b} and ${c} to ${sum3}.`
+  let stringSum=a + ' and ' + b + ' and ' + c + ' sum to ' + sum3 + '.';
+  let stringMulti='The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multi1 + '.';
+  // let stringMulti =`The product of ${a} and ${b} and ${c} is ${multi1}.`
+  return[ sum3,multi1,stringSum,stringMulti]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -116,7 +120,7 @@ let arryMulti=[2,3,4]
 let multi=1
 let stringArray=''
 function multiplyArray(multArr) {
-  for (let i=0;i<testArray.length;i++){
+  for (let i=0;i<arryMulti.length;i++){
     multi =multiply(arryMulti[i],multi)[0]
     if (i<2){
       stringArray=stringArray+arryMulti[i]+','
@@ -130,7 +134,7 @@ function multiplyArray(multArr) {
 console.log(multiplyArray())
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
+// testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
@@ -152,12 +156,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-
+let multip=1;
+let stringArra='';
 function multiplyAnyArray(dynamicArray) {
-  //eslint-disable-line
-}
 
+  for (let i =0 ; i<testDynamicArray.length; i++){
+    console.log('i:',i)
+    multip =multiply(testDynamicArray[i],multip)[0]
+    console.log(multip)
+    if (i<testDynamicArray.length-1){
+      stringArra=stringArra+testDynamicArray[i]+','
+    }else{
+      stringArra=stringArra+testDynamicArray[i]
+    }
+  }
+  let stringAr=`The numbers ${stringArra} have a prodect of ${multip}.`
+  return[multip,stringAr];
+}
+// console.log(multiplyAnyArray(testDynamicArray))
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
