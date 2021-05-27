@@ -43,28 +43,49 @@ function multiply(a, b) {
 
 /////////////////////////////////////
 /* Problem 3
-Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an array where the first element is the sum of those three numbers, the second element is the product of those three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
+Write a function called sumAndMultiply() that takes in three numbers as separate arguments and returns an
+ array where the first element is the sum of those three numbers, the second element is the product of those 
+ three numbers,  and the third and fourth elements are strings that EXACTLY follow this example and use the values that were input into the function:
 
 Third element: "4 and 7 and 5 sum to 16."
 Fourth element: "The product of 4 and 7 and 5 is 140."
 
-IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function. To do addition, use your sum() function, and to do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. However, you may continue to use the + operator for string concatenation.
+IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this function
+. To do addition, use your sum() function, and to do multiplication,
+ use your multiply() function that you've already created. You're going to have to be resourceful to
+  figure out how to do this. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
+  var sumAndMultiplyArray = []
+
+  var aPlusB = sum(a, b)[0];
+  var finalSum = sum(aPlusB, c)[0];
+  sumAndMultiplyArray[0] = finalSum;
+
+  var aTimesB = multiply(a, b)[0];
+  var finalProduct = multiply(aTimesB, c)[0];
+  sumAndMultiplyArray[1] = finalProduct;
+
+  sumAndMultiplyArray[2] = `${a} and ${b} and ${c} sum to ${finalSum}.`
+  sumAndMultiplyArray[3] = `The product of ${a} and ${b} and ${c} is ${finalProduct}.`
+
+  return sumAndMultiplyArray;
   //eslint-disable-line
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+ testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 4
-Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
+Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an
+ array where the first element is the sum of the numbers in the array, and the second element is a string that
+ EXACTLY follows this example and uses the values that were input into the function:
 
 "2,3,4 was passed in as an array of numbers, and 9 is their sum."
 
@@ -76,12 +97,24 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
+  let  arr = [];
+
+  let a = sum((sumArr[0]), (sumArr[1]));
+  a = a[0];
+  let finalSum = sum(a, sumArr[2])[0];
+  
+  arr[0] = finalSum;
+
+
+arr[1] = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${finalSum} is their sum.`
+
+  return arr;
   //eslint-disable-line
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
