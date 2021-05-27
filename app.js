@@ -139,12 +139,23 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
+let testDynamicArray = [1, 2, 3, 4, 5  ]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
+  let multi1 = 1
+  for (let i = 0; i < dynamicArray.length; i= i+2) {
+    if (dynamicArray.length % 2 ==1  && i == dynamicArray.length - 1 ) {
+      multi1 = multi1* multiply(dynamicArray[i], 1)[0];
+    }else{
+      multi1 = multi1* multiply(dynamicArray[i], dynamicArray[i + 1])[0];
+
+    }
+  }
+ let strMulti = `The numbers 1,2,3,4,5 have a product of ${multi1}.`
+ return [multi1 , strMulti]
   //eslint-disable-line
 }
-
+testMultiplyAnyArray(testDynamicArray)
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
