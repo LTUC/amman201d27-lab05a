@@ -8,10 +8,12 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 function sum(a, b) {
-// Write your code here
+  let s = a + b;
+  let string =  `The sum of ${a} and ${b} is ${s}.`;
+  return[s,string];
 }
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -25,8 +27,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
+  let m = a * b;
+  let string = `The product of ${a} and ${b} is ${m}.`;
+  return[m,string];
   //eslint-disable-line
 }
+testMultiply(5, 9);
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -46,11 +52,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  //eslint-disable-line
+  let sum1 = sum(a,b)[0];
+  let sum2 = sum(sum1,c)[0];
+  let product1 = multiply(a,b)[0];
+  let product2= multiply(product1,c)[0];
+  let sumString = `${a} and ${b} and ${c} sum to ${sum2}.`;
+  let multipyString = `The product of ${a} and ${b} and ${c} is ${product2}.`;
+  return [sum2 , product2 ,sumString ,multipyString];
 }
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -68,12 +79,16 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
+  let sum1 = sum(sumArr[0], sumArr[1])[0];
+  let sum2 = sum(sum1, sumArr[2])[0];
+  let resultString = `${sumArr} was passed in as an array of numbers, and ${sum2} is their sum.`
+  return [sum2, resultString];
   //eslint-disable-line
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -89,11 +104,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+  let product1 = multiply(multArr[0],multArr[1])[0];
+  let product2 = multiply(product1, multArr[2])[0];
+  let resultString = `The numbers ${multArr} have a product of ${product2}.`
+  return [product2, resultString];
   //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
@@ -118,9 +137,18 @@ let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
+  let array2 = [];
+  let theValue = dynamicArray[0];
+  for (let x = 1; x < dynamicArray.length + 1; x++){
+    let product = multiply(theValue,x);
+    theValue = product[0];
+  }
+  array2[0] = theValue;
+  array2[1] = `The numbers ${dynamicArray.toString()} have a product of ${theValue}.`
+  return array2;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
