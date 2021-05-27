@@ -50,9 +50,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
- let x= a+b+c;
- let y= a*b*c;
- return [x , y , a + " and " +b+ " and " +c+ " sum to " + x + "." , "The product of " +a+ " and " +b+ " and " +c+ " is " + y + "."];
+ //let x= a+b+c;
+ //let y= a*b*c;
+ let x= sum(a,b)[0]; 
+ let y = sum(x,c)[0];
+
+ let i= multiply(a,b)[0];
+ let j= multiply(i,c)[0];
+
+ return [y , j , a + " and " +b+ " and " +c+ " sum to " + y + "." , "The product of " +a+ " and " +b+ " and " +c+ " is " + j + "."];
  //return [x, y, `${a} and ${b} and ${c} sum to ${x}.`, `The product of ${a} and ${b} and ${c} is ${y}.`];
 }
 
