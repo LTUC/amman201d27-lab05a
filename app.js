@@ -8,12 +8,12 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 function sum(a, b) {
-  let sum = a + b ;
+  let sum = a + b;
   let str = `The sum of ${a} and ${b} is ${sum}.`
-  return [sum , str ]
-// Write your code here
+  return [sum, str]
+  // Write your code here
 }
-testSum(4,7)
+testSum(4, 7)
 // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
 
@@ -29,12 +29,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
-  let multi = a * b ;
+  let multi = a * b;
   let str = `The product of ${a} and ${b} is ${multi}.`
-  return [multi , str ]
+  return [multi, str]
   //eslint-disable-line
 }
-testMultiply(5,9)
+testMultiply(5, 9)
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -55,17 +55,17 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
 
- let sum1 = sum(a,b)[0] ;
- let sum2 = sum(sum1,c)[0]
- let multi1 = multiply(a,b)[0];
- let multi2= multiply(multi1,c)[0]
- let strSum = `${a} and ${b} and ${c} sum to ${sum2}.`
- let strMulti = `The product of ${a} and ${b} and ${c} is ${multi2}.`
- return [sum2 , multi2 ,strSum ,strMulti ];
+  let sum1 = sum(a, b)[0];
+  let sum2 = sum(sum1, c)[0]
+  let multi1 = multiply(a, b)[0];
+  let multi2 = multiply(multi1, c)[0]
+  let strSum = `${a} and ${b} and ${c} sum to ${sum2}.`
+  let strMulti = `The product of ${a} and ${b} and ${c} is ${multi2}.`
+  return [sum2, multi2, strSum, strMulti];
 
   //eslint-disable-line
 }
-testSumAndMultiply(4,7,5)
+testSumAndMultiply(4, 7, 5)
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -86,9 +86,9 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-  let sumArrAll = sumAndMultiply(sumArr[0],sumArr[1],sumArr[2])[0]
-let strArr = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumArrAll} is their sum.`
-  return [sumArrAll,strArr]
+  let sumArrAll = sumAndMultiply(sumArr[0], sumArr[1], sumArr[2])[0]
+  let strArr = `${sumArr[0]},${sumArr[1]},${sumArr[2]} was passed in as an array of numbers, and ${sumArrAll} is their sum.`
+  return [sumArrAll, strArr]
   //eslint-disable-line
 }
 testSumArray(testArray)
@@ -111,9 +111,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+  let multiArrAll = sumAndMultiply(multArr[0], multArr[1], multArr[2])[1]
+  let strArr = `The numbers ${multArr[0]},${multArr[1]},${multArr[2]} have a product of ${multiArrAll}.`
+  return [multiArrAll, strArr]
   //eslint-disable-line
 }
-
+testMultiplyArray(testArray)
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
 
