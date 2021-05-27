@@ -104,6 +104,10 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   //eslint-disable-line
+  let A =multiply(multArr[0],multArr[1])[0];
+  let B=multiply(A,multArr[2])[0];
+  let S=testArray +` was passed in as an array of numbers, and ${B} is their sum.`;
+  return[B,S];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
