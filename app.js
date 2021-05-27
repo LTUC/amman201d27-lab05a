@@ -50,8 +50,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  let d = sum(a,b)[0] + c ;
-  let e = multiply(a,b)[0] * c ;
+  let d = sum(sum(a,b)[0],c)[0] ;
+  let e = multiply(multiply(a,b)[0],c)[0] ;
   let sumString = `${a} and ${b} and ${c} sum to ${d}.`
   let sumMult = `The product of ${a} and ${b} and ${c} is ${e}.`
   return [d,e,sumString,sumMult];
@@ -128,11 +128,48 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-
+ 
 function multiplyAnyArray(dynamicArray) {
-  //eslint-disable-line
+
+/*
+  
+  let arrMultDyn = dynamicArray ;
+  let arrDynVar = null;
+  let stringArrDyn ='';
+
+  if (dynamicArray.length % 2 == 0){
+    for (let i = 1 ; i < dynamicArray.length ; i++){
+    
+    arrDynVar = multiply(arrMultDyn[0],arrMultDyn[1])[0];
+    arrMultDyn.shift();
+    arrMultDyn.shift();
+    arrMultDyn.unshift(arrDynVar)
+
+   } 
+
+  }else{
+    for (let i = 0 ; i < arrMultDyn.length ; i++){
+      
+      arrDynVar = multiply(arrMultDyn[0],arrMultDyn[1])[0];
+
+      arrMultDyn.slice(0,2);
+      console.log(arrMultDyn.length);
+      arrMultDyn.unshift(arrDynVar)
+      console.log(arrMultDyn,i);
+  }
+  
+    stringArrDyn = `The numbers ${dynamicArray.toString()} have a product of ${arrMultDyn[0]}.`
 }
 
+  
+return [arrMultDyn[0],stringArrDyn] 
+
+
+
+
+
+*/
+}
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
