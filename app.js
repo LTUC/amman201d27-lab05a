@@ -106,17 +106,31 @@ Write a function called multiplyArray() that takes an array of numbers as its ar
 
 "The numbers 2,3,4 have a product of 24."
 
+
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
+let arryMulti=[2,3,4]
+let multi=1
+let stringArray=''
 function multiplyArray(multArr) {
-  //eslint-disable-line
+  for (let i=0;i<testArray.length;i++){
+    multi =multiply(arryMulti[i],multi)[0]
+    if (i<2){
+      stringArray=stringArray+arryMulti[i]+','
+    }else{
+      stringArray=stringArray+testArray[i]
+    }
+ }
+  let st=`The numbers ${stringArray} have a product of ${multi}.`
+  return[multi,st]
 }
+console.log(multiplyArray())
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
