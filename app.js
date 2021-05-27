@@ -9,6 +9,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 function sum(a, b) {
 // Write your code here
+//alanood
 }
 // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
