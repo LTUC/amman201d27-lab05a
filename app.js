@@ -30,8 +30,6 @@ function multiply(a, b) {
   let StringProduct = `The product of ${5} and ${9} is ${c}.`;
   return[c,StringProduct];
 }
-
-// Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -49,11 +47,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  //eslint-disable-line
+  let s = sum(a,b)[0];
+  let v = sum(s,c)[0];
+  let f = multiply(a,b)[0];
+  let m = multiply(f,c)[0];
+  let StringSum = `${a} and ${b} and ${c} sum to ${v}.`;
+  let StringMultiply = `The product of ${a} and ${b} and ${c} is ${m}.`;
+  console.log(StringSum,StringMultiply);
+  return[v,m,StringSum,StringMultiply];
 }
+testSumAndMultiply(4,7,5);
 
-// Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
