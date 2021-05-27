@@ -13,7 +13,7 @@ function sum(a, b) {
   return [sum , str ]
 // Write your code here
 }
-testSum(1,1)
+testSum(4,7)
 // Here is the test for sum(); uncomment it to run it
 // testSum(4, 7);
 
@@ -29,8 +29,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
+  let multi = a * b ;
+  let str = `The product of ${a} and ${b} is ${multi}.`
+  return [multi , str ]
   //eslint-disable-line
 }
+testMultiply(5,9)
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
