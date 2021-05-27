@@ -33,10 +33,8 @@ function multiply(a, b) {
   let w = `The product of ${a} and ${b} is ${mult2}.`;
   // console.log(w);
   return[mult2, w];
-
-  console.log(w);
+  // console.log(w);
   return[mult2, w];
- 
 
 }
 
@@ -91,7 +89,16 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-  //eslint-disable-line
+  let sumArr1 = testArray[0]
+  let sumArr2 = testArray[1]
+  let sumArr3 = testArray[2]
+  let sumpro1 = sum(sumArr1,sumArr2)[0]
+  let sumpro2 = sum(sumpro1,sumArr3)[0]
+  // console.log(sumpro2);
+
+  let summ1 = `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumpro2} is their sum.`
+  // console.log(summ1);
+  return[sumpro2,summ1]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
