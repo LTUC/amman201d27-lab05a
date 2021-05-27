@@ -17,7 +17,7 @@ function sum(a,b){
   return [x,"The sum of " + a + " and " + b + " is " + x + "."];
   
 }
-sum();
+sum(4,7);
 
 
 // Here is the test for sum(); uncomment it to run it
