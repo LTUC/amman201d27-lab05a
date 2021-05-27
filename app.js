@@ -9,8 +9,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 function sum(a, b) {
 let z=a+b;
-alert('sum of a and b .')
-return z ;
+let x= "The sum of 4 and 7 is 11.";
+return [z,x] ;
 }
 testSum(4, 7);
 
@@ -131,6 +131,8 @@ Test this function by hand in the console to get it working, and when you think 
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) {
+
+
   //eslint-disable-line
 }
 
