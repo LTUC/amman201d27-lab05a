@@ -33,11 +33,14 @@ the testMultiply() function and see if the test passes.*/
 
 // Write your code here
 function multiply(a, b) {
+  let c = a * b ;
+  let mnt = `The product of ${a} and ${b} is ${c}.`;
+  return[c,mnt];
   //eslint-disable-line
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+  testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
