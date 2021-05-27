@@ -12,6 +12,7 @@ function sum(a, b) {
   let w = `The sum of ${a} and ${b} is ${q}.`;
   console.log(w);
   return[q, w];
+
 }
 
 // Here is the test for sum(); uncomment it to run it
@@ -33,6 +34,7 @@ function multiply(a, b) {
   let w = `The product of ${a} and ${b} is ${mult2}.`;
   console.log(w);
   return[mult2, w];
+ 
 }
 
 
