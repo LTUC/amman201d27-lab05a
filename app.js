@@ -7,11 +7,15 @@ Write a function called sum() that takes in two numbers as arguments and then re
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
-function sum(a, b) {
-// Write your code here
+function sum(a,b) {
+ let z = a + b;
+ let x = `The sum of ${a} and ${b} is ${z}.`;
+ 
+return [z,x]
 }
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
+//console.log(testSum(4, 7));
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -25,8 +29,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
+  let z = a * b;
+  let x = `The product of ${a} and ${b} is ${z}.`
   //eslint-disable-line
+  return [z,x]
 }
+testMultiply(5,9);
+//console.log(testMultiply(5,9));
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -47,7 +56,15 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
+  let z = testSum(4, 7, 5);
+  let y = testMultiply(4, 7, 5);
+  let thirdelm = `${a} and ${b} and ${c} sum to ${z}.`
+  let fouthelm = `The product of ${a} and ${b} and ${c} is ${y}.`
+
+  return [z,y,thirdelm,fouthelm]
 }
+sumAndMultiply(4, 7, 5);
+//console.log(sumAndMultiply(4, 7, 5));
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -68,8 +85,16 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
+  let x = testSum(testArray);
+  let y = `${testArray} was passed in as an array of numbers, and ${x} is their sum.`
+
+  return [x,y]
+
   //eslint-disable-line
 }
+testSumArray(2,3,4);
+//console.log(testSumArray());
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -89,8 +114,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+  let x = testMultiply(multArr);
+  let z = `The numbers ${multiplyAnyArray} have a product of ${x}.`
+
+  return[x,z]
   //eslint-disable-line
 }
+testMultiplyArray(2,3,4);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
