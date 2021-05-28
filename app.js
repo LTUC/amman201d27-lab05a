@@ -28,8 +28,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
+  let z = a * b;
+  let x = `The product of ${a} and ${b} is ${z}.`
   //eslint-disable-line
+  return [z,x]
 }
+testMultiply();
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
