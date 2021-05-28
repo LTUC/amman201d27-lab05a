@@ -9,8 +9,8 @@ Test this function by hand in the console to get it working, and when you think 
 
 function sum(a, b) {
 let z = a + b
-let arr=  `The sum of ${a} and ${b} is 11.`;
-return[z, arr]
+let stringF =  `The sum of ${a} and ${b} is 11.`;
+return[z, stringF]
 }
 console.log(sum(4,7))
 // Here is the test for sum(); uncomment it to run it
@@ -27,11 +27,12 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // // // Write your code here
+
 function multiply(a, b) {
   let mul = a * b;
-  let arr = `The product of ${a} and ${b} is ${mul}.`
-  return[mul,arr];}
-  console.log(multiply(5, 9));
+  let stringThird = `The product of ${a} and ${b} is ${mul}.`
+  return[mul,stringThird];}
+  console.log(multiply(5,9));
   //eslint-disable-lines
 
 
@@ -57,10 +58,10 @@ function sumAndMultiply(a, b, c) {
   let sumTotal = sum(sumNew,c)[0]
   let multiplyNew = multiply(a,b)[0]
   let multiplyTotal = multiply(multiplyNew,c)[0]
-  let stringF = `${a} and ${b} and ${c} sum to ${sumTotal}.` ;
-  let stringS = `The product of ${a} and ${b} and ${c} is ${multiplyTotal}.`;
+  let stringFourth = `${a} and ${b} and ${c} sum to ${sumTotal}.` ;
+  let stringFifth = `The product of ${a} and ${b} and ${c} is ${multiplyTotal}.`;
   
-  return[sumTotal, multiplyTotal, stringF, stringS]
+  return[sumTotal, multiplyTotal, stringFourth, stringFifth]
   
   //eslint-disable-line
 }
@@ -80,16 +81,26 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
-// Write your code here
+// // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
+  var firstElement = testArray[0]
+  let secondElement = testArray[1]
+  let thirdElement = testArray[2]
+  let stringSixth = `${firstElement},${secondElement},${thirdElement} was passed in as an array of numbers, and 9 is their sum.`
+  let sumNew = sum(firstElement,secondElement)[0]
+  let sumTotal = sum(sumNew,thirdElement)[0]
+  return[sumTotal, stringSixth]
   //eslint-disable-line
+  
 }
+console.log(sumArray(testArray));
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -105,6 +116,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+
   //eslint-disable-line
 }
 
