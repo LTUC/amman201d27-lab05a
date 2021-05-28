@@ -102,18 +102,18 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-//let testArray = [2, 3, 4];
+let testArray = [2, 3, 4];
 //eslint-disable-line
 
-//function sumArray(sumArr) {
-  //function sumArray([a,b,c]){
-    //let x = sum (a,b);
-  //return [x,"The product of " + a + " and " + b + " is " + c + "."];
+function sumArray(sumArr) {
+  function sumArray([a,b,c]){
+    let x = sum (a,b);
+  return [x,"The product of " + a + " and " + b + " is " + c + "."];
   //eslint-disable-line
-//}
-//sumArray([]);
-//}
-//sumArray(testArray);
+}
+sumArray([]);
+}
+sumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
 
