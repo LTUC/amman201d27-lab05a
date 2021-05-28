@@ -17,11 +17,9 @@ function sum(a,b){
   return [x,"The sum of " + a + " and " + b + " is " + x + "."];
   
 }
-sum(4,7);
-
 
 // Here is the test for sum(); uncomment it to run it
- //testSum(4, 7);
+ testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,22 +68,6 @@ function sumAndMultiply(a, b,c) {
   return [newsum2 , multiplication2 , `${a} and ${b} and ${c} sum to ${newsum2}.` , `The product of ${a} and ${b} and ${c} is ${multiplication2}.`];
 }
   
-  // Here is the test for sumAndMultiply(); uncomment it to run it
-  testSumAndMultiply(4,7,5);
-     
-  
- 
-  //function multiply (a,b){
-  //let f = a * b;
-  //return[f];
-//}
-
-//}
-
-
-
-
-
 // Here is the test for sumAndMultiply(); uncomment it to run it
  testSumAndMultiply(4,7,5);
 
@@ -109,15 +91,13 @@ function sumArray(sumArr) {
   function sumArray([a,b,c]){
     let x = sum (a,b);
   return [x,"The product of " + a + " and " + b + " is " + c + "."];
-  //eslint-disable-line
+  
 }
 sumArray([]);
 }
-sumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+ testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
