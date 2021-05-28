@@ -70,21 +70,6 @@ function sumAndMultiply(a, b,c) {
   return [newsum2 , multiplication2 , `${a} and ${b} and ${c} sum to ${newsum2}.` , `The product of ${a} and ${b} and ${c} is ${multiplication2}.`];
 }
   
-  // Here is the test for sumAndMultiply(); uncomment it to run it
-  testSumAndMultiply(4,7,5);
-     
-  
- 
-  //function multiply (a,b){
-  //let f = a * b;
-  //return[f];
-//}
-
-//}
-
-
-
-
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
  testSumAndMultiply(4,7,5);
