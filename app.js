@@ -92,7 +92,7 @@ function sumArray(sumArr) {
 
   //eslint-disable-line
 }
-testSumArray();
+testSumArray(2,3,4);
 //console.log(testSumArray());
 
 
@@ -114,8 +114,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) {
+  let x = testMultiply(multArr);
+  let z = `The numbers ${multiplyAnyArray} have a product of ${x}.`
+
+  return[x,z]
   //eslint-disable-line
 }
+testMultiplyArray(2,3,4);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
