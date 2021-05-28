@@ -15,6 +15,7 @@ return [z,x]
 }
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
+//console.log(testSum(4, 7));
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -33,7 +34,8 @@ function multiply(a, b) {
   //eslint-disable-line
   return [z,x]
 }
-testMultiply();
+testMultiply(5,9);
+//console.log(testMultiply(5,9));
 
 // Here is the test for multiply(); uncomment it to run it
 // testMultiply(5,9);
@@ -54,14 +56,15 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sumAndMultiply(a, b, c) {
   //eslint-disable-line
-  let z = testSum();
-  let y = testMultiply();
+  let z = testSum(4, 7, 5);
+  let y = testMultiply(4, 7, 5);
   let thirdelm = `${a} and ${b} and ${c} sum to ${z}.`
   let fouthelm = `The product of ${a} and ${b} and ${c} is ${y}.`
 
   return [z,y,thirdelm,fouthelm]
 }
-sumAndMultiply();
+sumAndMultiply(4, 7, 5);
+//console.log(sumAndMultiply(4, 7, 5));
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
@@ -82,8 +85,16 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
+  let x = testSum(testArray);
+  let y = `${testArray} was passed in as an array of numbers, and ${x} is their sum.`
+
+  return [x,y]
+
   //eslint-disable-line
 }
+testSumArray();
+//console.log(testSumArray());
+
 
 // Here is the test for sumArray(); uncomment it to run it
 
