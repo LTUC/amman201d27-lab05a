@@ -78,9 +78,16 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
   //eslint-disable-line
+  function sumArray([a,s,d]){
+    var x = sum(a,s)[0];
+    var y = sum(x,d)[0];
+    return [y, a + "," + s + "," + d + "was passed in as an array of numbers, and + "y" +" is their sum.""]
+  }
+  sumArray([]);
 }
 
 // Here is the test for sumArray(); uncomment it to run it
+testsumArray(testArray);
 
 // testSumArray(testArray);
 
