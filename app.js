@@ -9,8 +9,6 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 
-let c = a + b
-return [c,"The sum of " + a + " and " + b + " is " + c + "."]
 
 function sum(a,b){
   let x = a + b;
@@ -95,12 +93,9 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4];
 
 function sumArray(sumArr) {
-  function sumArray([a,b,c]){
-    let x = sum (a,b);
-  return [x,"The product of " + a + " and " + b + " is " + c + "."];
-  //eslint-disable-line
-}
-sumArray([]);
+  let newSummation1=sum(sumArr[0],sumArr[1])[0];
+  let newSummation2=sum(newSummation1,sumArr[2])[0];
+  return[newSummation2, `${sumArr} was passed in as an array of numbers, and ${newSummation2} is their sum.`]
 }
 
 // Here is the test for sumArray(); uncomment it to run it
