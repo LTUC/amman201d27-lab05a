@@ -54,15 +54,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
+  let s1= sum(a,b)[0];
+  let s2= sum(c,s1)[0];
 
-  let sum1= sum(a,b)[0];
-  let sum2= sum(c,sum1)[0];
+
+  let p1= multiply(a,b)[0];
+  let p2= multiply(p1,c)[0];
+
+   return [s2,p2,`${a} and ${b} and ${c} sum to ${s2}.`,`The product of ${a} and ${b} and ${c} is ${p2}.`]
   
-  let prod1= multiply(a,b)[0];
-  let prod2= multiply(prod1,c)[0];
- 
-   return [sum2,prod2,`${a} and ${b} and ${c} sum to ${sum2}.`,`The product of ${a} and ${b} and ${c} is ${prod2}.`]
-  
+
+
 
 }
 
@@ -72,7 +74,7 @@ function sumAndMultiply(a, b, c) {
 
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-// testsumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 //sumAndMultiply();
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -95,14 +97,17 @@ let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
 
-  //eslint-disable-line
+  let s1= sum(testArray[0],testArray[1])[0];
+  sumArr= sum(s1,testArray[2])[0];
+ return[sumArr,`${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sumArr} is their sum.`]
+
 
     
   }
   
 
 // Here is the test for sumArray(); uncomment it to run it
-// testsumArray(testArray);
+// testSumArray(testArray);
 
 
 
@@ -110,7 +115,7 @@ function sumArray(sumArr) {
 //testsumArray(testArray);
 
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
