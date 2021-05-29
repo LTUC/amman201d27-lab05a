@@ -8,12 +8,12 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 function sum(a, b) {
-var c = a + b;
-return [c,"The sum of" + a + "and" + b + "is"+ c + "."];
+let c = a + b;
+return [c,`The sum of ${a} and ${b} is ${c}.`]
 }
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
-sum();
+ testSum(4, 7);
+
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -26,13 +26,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) {
-  var c = a*b;
-  return [c,"The product of " + a + "and" + b + "is"+ c + "."];
+ let c = a*b;
+  return [c,`The product of ${a} and ${b} is ${c}.`];
 }
-multiply();
+
 // Here is the test for multiply(); uncomment it to run it
 
-// testMultiply(5,9);
+ testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -49,20 +49,25 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) {
-  function sumAndMultiply(i, ii, iii){
-    var h = sum(i,ii)[0];
-    var g = sum(h,iii)[0];
-    var x = multiply(i,ii)[0];
-    var y = multiply(x,iii)[0];
+  let s1= sum(a,b)[0];
+  let s2= sum(c,s1)[0];
+  
+  let p1= multiply(a,b)[0];
+  let p2= multiply(p1,c)[0];
+ 
+   return [s2,p2,`${a} and ${b} and ${c} sum to ${s2}.`,`The product of ${a} and ${b} and ${c} is ${p2}.`]
+  
+  
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
-return [g, y, + i + "and" + ii +"and"+ iii + "sum to" + g + "." , "The product of" + i + "and" + ii + "and" +iii];
-}
-sumAndMultiply();
+
+//sumAndMultiply();
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-testsumAndMultiply(4,7,5);
+
+testSumAndMultiply(4,7,5);
+
 /////////////////////////////////////
 /* Problem 4
 Write a function called sumArray() that takes in an array of numbers as its single argument and then returns an array where the first element is the sum of the numbers in the array, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
@@ -77,17 +82,13 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) {
-  //eslint-disable-line
-  function sumArray([a,s,d]){
-    var x = sum(a,s)[0];
-    var y = sum(x,d)[0];
-    return [y, a + "," + s + "," + d + "was passed in as an array of numbers, and + "y" +" is their sum.""];
+  
   }
-  sumArray([]);
-}
+ 
+
 
 // Here is the test for sumArray(); uncomment it to run it
-testsumArray(testArray);
+//testsumArray(testArray);
 
 // testSumArray(testArray);
 
@@ -106,17 +107,15 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) {
   //eslint-disable-line
-  var testArray= [2,3,4];
-  function  multiplyArray([a,s,d])
-  var r = multiply(a,s)[0];
-  var t = multiply(r,d)[0];
-  return [t , "The numbers"+ a + "," + s + "," + d + "have a product of " + t + "." ];
+  //var testArray= [2,3,4];
+  //function  multiplyArray([a,s,d])
+ 
 }
 
-multiplyArray([]);
+
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyArray(testArray);
-testmultiplyArray(testArray);
+//testmultiplyArray(testArray);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop.
 
 // You're done! Submit the link to the repo following the instructions in Canvas. Or, try out the stretch goal below...
